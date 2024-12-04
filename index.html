@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>As Çevre Danışmanlığı</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .navbar-custom {
+      background-color: #383e42;
+    }
+
+    .card-img-top {
+      width: 350px;
+      height: 200px;
+    }
+
+    .navbar-custom .navbar-brand,
+    .navbar-custom .navbar-nav .nav-link {
+      color: white;
+    }
+
+    .navbar-custom .navbar-brand:hover,
+    .navbar-custom .navbar-nav .nav-link:hover {
+      color: #0a9b25;
+    }
+
+    .dropdown-menu {
+      background-color: #383e42;
+    }
+
+    .dropdown-item {
+      color: white;
+    }
+
+    .dropdown-item:hover {
+      background-color: #7a310c;
+      color: white;
+    }
+
+    .hero-section {
+    background: url('https://t4.ftcdn.net/jpg/02/01/78/01/360_F_201780104_hetXS26W8alnsbDKbpnr4sVizJfiO12w.jpg') no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding: 20px;
+}
+
+  .hero-section::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgba(128, 128, 128, 0.7), rgba(128, 128, 128, 0.6)), rgba(0, 0, 0, 0.3);
+      /* Gri arka plan ve şeffaf siyah örtü */
+  }
+
+  .hero-content {
+      position: relative;
+      z-index: 1;
+  }
+
+  .hero-section h1 {
+      font-size: 3rem;
+      font-weight: bold;
+  }
+
+  .hero-section p {
+      font-size: 1.2rem;
+  }
+
+  .btn-custom {
+      background-color: #0a9b25;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      margin-top: 20px;
+      transition: background-color 0.3s ease; /* Geçiş efekti ekledim */
+  }
+
+  .btn-custom:hover {
+      background-color: #7a310c;
+      color: white;
+  }
+
+
+    .about-section {
+      padding: 60px 20px;
+    }
+
+    .about-section h2,
+    .services-section h2,
+    .referances-section h2 {
+      color: #383e42;
+    }
+
+    .services-section {
+      padding: 60px 20px;
+      background-color: #f9f9f9;
+    }
+
+    .card {
+      border: none;
+      margin-bottom: 20px;
+    }
+
+    .card-title {
+      color: #7a310c;
+    }
+
+    .card-text {
+      color: #383e42;
+    }
+
+    .referances-section {
+      padding: 60px 20px;
+    }
+
+    .form-control:focus {
+      border-color: #0a9b25;
+      box-shadow: 0 0 0 0.2rem rgba(10, 155, 37, 0.25);
+    }
+
+    .btn-primary {
+      background-color: #0a9b25;
+      border-color: #0a9b25;
+    }
+
+    .btn-primary:hover {
+      background-color: #7a310c;
+      border-color: #7a310c;
+    }
+
+    .footer {
+      background-color: #383e42;
+      color: white;
+      padding: 20px 0;
+    }
+
+    .footer a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      color: #0a9b25;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .hero-section h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero-section p {
+        font-size: 1rem;
+      }
+
+      .btn-custom {
+        font-size: 1rem;
+        padding: 10px 20px;
+      }
+    }
+
+    #showMore {
+      cursor: pointer;
+    }
+
+    .navbar-toggler {
+    display: block;
+    color: white; /* Navbar arka planıyla kontrast sağlayacak bir renk seç */
+    border-color: white; /* Opsiyonel, sınırın görünür olmasını sağlar */
+  }
+
+  .navbar-toggler-icon {
+      background-image: url("path/to/your/icon.png"); /* İstersen özel bir ikon belirtebilirsin */
+  }
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">As Çevre Danışmanlığı</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" style="color: white;"></span> <!-- İkonun görünür olduğundan emin ol -->
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">Hakkımızda</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#services">Hizmetlerimiz</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link mr-5" href="#referances">Referanslarımız</a>
+                </li>
+                <div class="nav-item ml-3"></div>
+                <li class="nav-item">
+                    <a class="nav-link" href="tel:+90 384-215-45-45"> Sabit : 0 384 215 45 45</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="tel:+90 537-976-33-38">Cep : 0 537 976 33 38</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+  <!-- Hero Section -->
+  <header class="hero-section">
+    <div class="hero-content">
+      <h1>Çevreye Duyarlı Gelecek</h1>
+      <p>As Çevre Danışmanlığı ile daha temiz bir dünya için çalışıyoruz.</p>
+      <a href="#services" class="btn btn-custom btn-lg">Hizmetlerimizi Keşfedin</a>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-fluid text-center">
+          <h2>Hakkımızda</h2>
+          <p>As Çevre Danışmanlığı, 2023 yılında kurulmuş çevreye duyarlı projeler geliştiren ve çevre danışmanlık hizmetleri sunan bir şirkettir. Misyonumuz, öncelikli olarak kurumsal firmalara hizmet vermek, sürdürülebilir bir gelecek için yenilikçi ve etkili çözümler üretmektir.</p>
+        </div>
+        <div class="" style="justify-content: center; align-items: center;">
+          <img src="sources/yeterlilik belgesi-1.png" class="img-fluid" style="display: block; margin: 0 auto; max-width: 50%;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services-section">
+    <div class="container">
+      <div class="row">
+        <div class="col text-center">
+          <h2>Hizmetlerimiz</h2>
+          <p class="lead">Çevre danışmanlık hizmetlerimiz ile daha yeşil bir geleceğe katkıda bulunuyoruz.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-6 text-center">
+          <div class="card">
+            <img style="height: 200px;" src="https://media.istockphoto.com/id/1322139094/photo/multiethnic-colleagues-sitting-at-desk-looking-at-laptop-computer-in-office.jpg?s=612x612&w=0&k=20&c=xrGP_nwtcdaZF8heKJ_FiEqnuqWxv1A7i71YZLXxSaE=" class="card-img-top" alt="Consulting">
+            <div class="card-body">
+              <h5 class="card-title">Çevre Danışmanlığı</h5>
+              <p class="card-text">Çevre dostu projeleriniz için profesyonel danışmanlık hizmetleri sunuyoruz.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 text-center">
+          <div class="card">
+            <img style="height: 200px;" src="https://media.marketrealist.com/brand-img/iI_AnD5rM/0x0/publicly-traded-consulting-firms-2021-1616525225420.jpg" class="card-img-top" alt="Solar Energy">
+            <div class="card-body">
+              <h5 class="card-title">ÇED ve Çevre İzin Süreçleri Takibi</h5>
+              <p class="card-text">Tesisler Kurulmadan önce ve kurulduktan sonraki lisanslandırma süreçlerine çözüm önerileri üretiyoruz.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 text-center">
+          <div class="card">
+            <img style="height: 200px;" src="https://waste-management-world.com/imager/media/wasteManagementWorld/3820706/AdobeStock_571968683_b0464c6958b2ce61ced917e5958dc330.jpeg" class="card-img-top" alt="Recycling">
+            <div class="card-body">
+              <h5 class="card-title">Sıfır Atık Çözüm Süreci Takibi</h5>
+              <p class="card-text">Atık yönetimi ve geri dönüşüm projeleri ile çevreye katkı sağlıyoruz.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Referances Section -->
+  <section id="referances" class="referances-section">
+    <div class="container">
+      <div class="col-lg text-center">
+        <h2>Referanslarımız</h2>
+        <p class="lead">Çevre danışmanlık hizmetlerimizden yararlanan birçok proje var.</p>
+      </div>
+      <div class="row" id="cardContainer">
+        <div class="col-lg-4 col-md-6 text-center">
+          <div class="card">
+            <img src="https://fibhabercom.teimg.com/crop/1280x720/fibhaber-com/images/haberler/nevsehir_atik_su_aritma_tesisinde_saniyede_200_litre_atik_su_aritiliyor_h21112.jpg" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Nevşehir Belediyesi AAT</h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 text-center">
+          <div class="card">
+            <img src="https://fibhabercom.teimg.com/crop/1280x720/fibhaber-com/images/haberler/2021/04/nevsehir-acigol-osb-ye-yeni-atik-su-aritma-tesisi-kuruluyor_7f0c0.jpg" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Acıgöl OSB AAT</h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 text-center">
+          <div class="card">
+            <img src="https://fibhabercom.teimg.com/crop/1280x720/fibhaber-com/images/haberler/2022/03/nevsehir_osb_2etap_atiksu_aritma_tesisi_ihale_ilani_h144838_03710.jpg" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Nevşehir OSB AAT</h5>
+            </div>
+          </div>
+        </div>
+        <!-- Eklenen kartlar buraya gelecek -->
+        <div class="col-lg-4 col-md-6 text-center hidden">
+          <div class="card">
+            <img src="https://www.dogaseed.com/wp-content/uploads/2019/01/kurumsal-08.jpg" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Doğa Tohumculuk A.Ş.</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 text-center hidden">
+          <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFhB9nLWYHyfeTQv37gRPGpmIOd8ehjZf-5w&s" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Ürgüp Devlet Hastanesi</h5>
+            </div>
+          </div>
+        </div>
+        <!-- Sonraki kartlar -->
+        <!-- Eklenen kartlar buraya gelecek -->
+        <div class="col-lg-4 col-md-6 text-center hidden">
+          <div class="card">
+            <img src="data:image/jpeg;base64,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" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Özel Versa Hastanesi</h5>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="col-lg-4 col-md-6 text-center hidden">
+          <div class="card">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgMdVgavEaXf08cJYT_uGJeGWCl4S78T8J9ZtRcLAHcLIf5z_-IVTBVGrTEViUelwIl14RMF-KrID5WkpVNe6AYffZuknOubFlIEZMTydnP7OJy7kjxeCBjON9gy6JH8R1SCQ4PwyanoFs/s280/images%5B5%5D.jpg" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Kozaklı Termal Otelleri</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 text-center hidden">
+          <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTI3QSR9LvRORaHQXJsTYfmhsQ7pgduGZJihg&s" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Göreme Belediye Başkanlığı</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 text-center hidden">
+          <div class="card">
+            <img src="sources/Kalaba Logo.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Kalaba Belediyesi AAT</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 text-center hidden">
+          <div class="card">
+            <img src="sources/Özkonak Logo.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Özkonak Belediye Başkanlığı</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 text-center hidden">
+          <div class="card">
+            <img src="sources/Sulusaray Logo.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Sulusaray Belediye Başkanlığı</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 text-center hidden">
+          <div class="card">
+            <img src="https://image.hurimg.com/i/hurriyet/75/0x0/6206312a0f254426d014b503.jpg" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Uçhisar Belediye Başkanlığı</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center mt-4">
+        <a id="showMore">Daha Fazla Göster</a>
+      </div>
+      <br>
+    </div>
+  </section>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $("#showMore").on("click", function(){
+        $(".hidden").slice(0, 12).removeClass("hidden");
+        if ($(".hidden").length === 0) {
+          $("#showMore").hide();
+        }
+      });
+    });
+  </script>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container text-center">
+      <p>&copy; 2024 As Çevre Danışmanlığı. Tüm hakları saklıdır.</p>
+      <p><a href="#">Gizlilik Politikası</a> | <a href="#">Kullanım Şartları</a></p>
+      <p><img src="https://pixsector.com/cache/dc0ee776/avd5c445f01ca4712be88.png" alt="" style="width: 35px; height: 35px;"> ascevremuhendislik@gmail.com</p>
+      <p><img src="https://cdn-icons-png.flaticon.com/512/0/191.png" alt="" style="width: 20px; height: 20px;">  0 384 215 45 45 | 0 537 976 33 38</p>
+    </div>
+  </footer>
+
+</body>
+</html>
